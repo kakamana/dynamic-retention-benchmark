@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "retention-bench"
+version = "0.1.0"
+description = "Cross-sector retention benchmarks + ε-greedy contextual bandit recommender"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy",
+  "pandas",
+  "scikit-learn>=1.4",
+  "scipy",
+  "matplotlib",
+  "seaborn",
+  "fastapi",
+  "uvicorn[standard]",
+  "pydantic>=2",
+  "joblib",
+  "pyarrow",
+  "mlflow",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "httpx",
+  "ruff",
+  "jupyterlab",
+  "evidently",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
